@@ -1,0 +1,4 @@
+com\dws\domain\User.class
+com\dws\service\UserServiceLocal.class
+com\dws\NewSessionBean.class
+com\dws\service\UserService.class
