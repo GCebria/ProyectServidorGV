@@ -17,42 +17,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
- 
-public class EliminarCancion extends HttpServlet {
+/**
+ *
+ * @author alumno
+ */
+public class EliminaCancion extends HttpServlet {
 
     @EJB
     private CancionServiceLocal cancionService;
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        
-//        int id = Integer.parseInt(request.getParameter("id"));
+        
+        
+        try {
+//            int id = Integer.parseInt(request.getParameter("id"));
 //        Cancion c = new Cancion();
 //        c.setIdCancion(id);
-        try {
-//             <!--public Cancion(String idCancion, String nombre, String album, String artista, int duracion, int ano, Double precio) {-->
-
-             
-
-//            this.cancionService.deleteCancion(c);
-//            for(Cancion c : canciones){
-//                if (c.getIdCancion()== id){
-//                    canciones.remove(c);
-//                }
-//            }
+//            cancionService.deleteCancion(c);
+//            
 //            List<Cancion> canciones = cancionService.listCanciones();
 //            
 //            request.getSession().setAttribute("canciones", canciones);
-//            
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.forward(request, response);
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

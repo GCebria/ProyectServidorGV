@@ -16,26 +16,26 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class CancionService implements CancionServiceLocal {
- private static ArrayList<Cancion> canciones = new ArrayList();
+
+    private static ArrayList<Cancion> canciones = new ArrayList();
 
     static {
         String album = "Hot Fuss";
         String artista = "The Killers";
         int ano = 2014;
         double precio = 0.99;
-        Cancion c1 = new Cancion(1, "Jenny Was a Friend of Mine", album, artista, 244 , ano, precio);
-        Cancion c2 = new Cancion(2, "Mr.Brightside", album, artista, 222 , ano, precio);
-        Cancion c3 = new Cancion(3, "Smile Like You Mean It", album, artista, 234 , ano, precio);
-        Cancion c4 = new Cancion(4, "Somebody Told Me", album, artista, 197 , ano, precio);
+        Cancion c1 = new Cancion(1, "Jenny Was a Friend of Mine", album, artista, 244, ano, precio);
+        Cancion c2 = new Cancion(2, "Mr.Brightside", album, artista, 222, ano, precio);
+        Cancion c3 = new Cancion(3, "Smile Like You Mean It", album, artista, 234, ano, precio);
+        Cancion c4 = new Cancion(4, "Somebody Told Me", album, artista, 197, ano, precio);
         Cancion c5 = new Cancion(5, "All These Things That I've Done", album, artista, 301, ano, 1.5);
-        Cancion c6 = new Cancion(6, "Andy, You're a Star", album, artista, 194 , ano, precio);
-        Cancion c7 = new Cancion(7, "On Top", album, artista, 258 , ano, precio);
-        Cancion c8 = new Cancion(8, "Change Your Mind", album, artista, 190 , ano, precio);
-        Cancion c9 = new Cancion(9, "Believe Me Natalie", album, artista, 306 , ano, precio);
-        Cancion c10 = new Cancion(10, "Midnight Show", album, artista, 242 , ano, precio);
-        Cancion c11 = new Cancion(11, "Everything Will Be Alright", album, artista, 345 , ano, precio);
-        
-    
+        Cancion c6 = new Cancion(6, "Andy, You're a Star", album, artista, 194, ano, precio);
+        Cancion c7 = new Cancion(7, "On Top", album, artista, 258, ano, precio);
+        Cancion c8 = new Cancion(8, "Change Your Mind", album, artista, 190, ano, precio);
+        Cancion c9 = new Cancion(9, "Believe Me Natalie", album, artista, 306, ano, precio);
+        Cancion c10 = new Cancion(10, "Midnight Show", album, artista, 242, ano, precio);
+        Cancion c11 = new Cancion(11, "Everything Will Be Alright", album, artista, 345, ano, precio);
+
         canciones.add(c1);
         canciones.add(c2);
         canciones.add(c3);
@@ -58,13 +58,21 @@ public class CancionService implements CancionServiceLocal {
     }
 
     @Override
-    public List borrarCancion(int id) {
-                for (Cancion c: canciones){
-            if (c.getIdCancion()==id){
+    public Boolean deleteCancion(Cancion cancion) {
+        Boolean funciona = false;
+        for (Cancion c: canciones){
+            if(cancion.getIdCancion()==c.getIdCancion()){
                 canciones.remove(c);
+                funciona = true;
             }
         }
-        return canciones;
         
-    }  
+                
+        return funciona;
+    }
+
+   
+
+ 
+   
 }
