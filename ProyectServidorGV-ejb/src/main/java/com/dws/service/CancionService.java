@@ -7,7 +7,6 @@ package com.dws.service;
 
 import com.dws.domain.Cancion;
 import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.Stateless;
 
 /**
@@ -53,26 +52,21 @@ public class CancionService implements CancionServiceLocal {
 //      public Cancion(String idCancion, String nombre, String album, String artista, int duracion, int ano)
 
     @Override
-    public List listCanciones() {
+    public ArrayList listCanciones() {
         return canciones;
     }
 
     @Override
-    public Boolean deleteCancion(Cancion cancion) {
-        Boolean funciona = false;
-        for (Cancion c: canciones){
-            if(cancion.getIdCancion()==c.getIdCancion()){
-                canciones.remove(c);
-                funciona = true;
-            }
+    public ArrayList deleteCancion(int id) {
+        ArrayList<Cancion> aux = null;
+//        int indice = 0;
+        for (Cancion c : canciones) {
+            if (c.getIdCancion() != id) {
+//                indice = canciones.indexOf(c);
+//                canciones.remove(indice);
+                aux.add(c);
+            }      
         }
-        
-                
-        return funciona;
+        return aux;
     }
-
-   
-
- 
-   
 }

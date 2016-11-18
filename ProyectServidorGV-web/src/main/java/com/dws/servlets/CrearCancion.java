@@ -8,7 +8,7 @@ package com.dws.servlets;
 import com.dws.domain.Cancion;
 import com.dws.service.CancionServiceLocal;
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,7 +31,7 @@ public class CrearCancion extends HttpServlet {
 //             <!--public Cancion(String idCancion, String nombre, String album, String artista, int duracion, int ano, Double precio) {-->
 
             
-            List<Cancion> canciones = cancionService.listCanciones();
+            ArrayList<Cancion> canciones = cancionService.listCanciones();
             
             int maxId = 0;
             for (Cancion cancion : canciones) {

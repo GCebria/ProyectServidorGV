@@ -6,7 +6,7 @@
 package com.dws.service;
 
 import com.dws.domain.Cancion;
-import java.util.List;
+import java.util.ArrayList;
 import javax.ejb.Local;
 
 /**
@@ -16,8 +16,11 @@ import javax.ejb.Local;
 @Local
 public interface CancionServiceLocal {
 
-    List listCanciones();
+    ArrayList listCanciones();
 
-   Boolean deleteCancion(Cancion cancion);
+
+    ArrayList deleteCancion(int id);
+
+
 
 }

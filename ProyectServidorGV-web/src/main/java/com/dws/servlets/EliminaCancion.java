@@ -9,7 +9,7 @@ import com.dws.domain.Cancion;
 import com.dws.service.CancionServiceLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,14 +31,14 @@ public class EliminaCancion extends HttpServlet {
         
         
         try {
-//            int id = Integer.parseInt(request.getParameter("id"));
-//        Cancion c = new Cancion();
-//        c.setIdCancion(id);
-//            cancionService.deleteCancion(c);
-//            
-//            List<Cancion> canciones = cancionService.listCanciones();
-//            
-//            request.getSession().setAttribute("canciones", canciones);
+            int id = Integer.parseInt(request.getParameter("id"));
+
+            ArrayList<Cancion> cancionesAux = cancionService.deleteCancion(id);
+          
+//            request.getSession().removeAttribute("canciones");
+            
+            request.getSession().setAttribute("canciones", cancionesAux);
+
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.forward(request, response);
         } catch (Exception e) {

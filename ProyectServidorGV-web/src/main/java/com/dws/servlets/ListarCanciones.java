@@ -8,8 +8,7 @@ package com.dws.servlets;
 import com.dws.domain.Cancion;
 import com.dws.service.CancionServiceLocal;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
+import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +26,7 @@ public class ListarCanciones extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try{
-            List<Cancion> canciones = cancionService.listCanciones();
+            ArrayList<Cancion> canciones = cancionService.listCanciones();
             request.getSession().setAttribute("canciones", canciones);
             RequestDispatcher rd = request.getRequestDispatcher("/listarCanciones.jsp");
             rd.forward(request, response);
