@@ -12,6 +12,14 @@
         <servlet-name>CrearCancion</servlet-name>
         <servlet-class>com.dws.servlets.CrearCancion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ModificarCancion</servlet-name>
+        <servlet-class>com.dws.servlets.ModificarCancion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarCancion</servlet-name>
+        <servlet-class>com.dws.servlets.EliminarCancion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListarUsers</servlet-name>
         <url-pattern>/ListarUsers</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>CrearCancion</servlet-name>
         <url-pattern>/CrearCancion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModificarCancion</servlet-name>
+        <url-pattern>/ModificarCancion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarCancion</servlet-name>
+        <url-pattern>/EliminarCancion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

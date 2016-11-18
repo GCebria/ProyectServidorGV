@@ -50,8 +50,8 @@
                 <td><%=duracion%> s.</td>
                 <td><%=ano%></td>
                 <td><%=precio%> €</td>
-                <td><a href="ModificarUser?accion=editar&id=<%=id%>">Modificar</td>
-                <td><a href="EliminarUser?id=<%=id%>">Borrar</td>
+                <td><a href="ModificarCancion?accion=editar&id=<%=id%>">Modificar</td>
+                <td><a href="EliminarCancion?id=<%=id%>">Borrar</td>
             </tr>
 
 
