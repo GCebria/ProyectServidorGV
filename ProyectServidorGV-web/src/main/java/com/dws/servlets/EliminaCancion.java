@@ -28,18 +28,18 @@ public class EliminaCancion extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
+
         try {
             int id = Integer.parseInt(request.getParameter("id"));
+            Cancion c = new Cancion();
+            c.setIdCancion(id);
+            this.cancionService.eliminaCancion(c);
 
-            ArrayList<Cancion> cancionesAux = cancionService.deleteCancion(id);
-          
-//            request.getSession().removeAttribute("canciones");
-            
-            request.getSession().setAttribute("canciones", cancionesAux);
+            ArrayList<Cancion> canciones = cancionService.listCanciones();
 
-            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+            request.getSession().setAttribute("canciones", canciones);
+
+            RequestDispatcher rd = request.getRequestDispatcher("/listarCanciones.jsp");
             rd.forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();

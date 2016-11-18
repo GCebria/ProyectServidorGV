@@ -58,15 +58,36 @@ public class CancionService implements CancionServiceLocal {
 
     @Override
     public ArrayList deleteCancion(int id) {
-        ArrayList<Cancion> aux = null;
-//        int indice = 0;
+//        ArrayList<Cancion> aux = null;
+        int indice = 0;
         for (Cancion c : canciones) {
-            if (c.getIdCancion() != id) {
-//                indice = canciones.indexOf(c);
-//                canciones.remove(indice);
-                aux.add(c);
+            if (c.getIdCancion() == id) {
+                indice = canciones.indexOf(c);
+                canciones.remove(indice);
+//                aux.add(c);
             }      
         }
-        return aux;
+        return canciones;
     }
+
+    @Override
+    public Boolean eliminaCancion(Cancion c) {
+        boolean encontrado = false;
+        int i = 0;
+
+        while ((i < canciones.size()) && (encontrado == false)) {
+            if (canciones.get(i).getIdCancion()== c.getIdCancion()) {
+                encontrado = true;
+            } else {
+                i++;
+            }
+        }
+        // Si la persona existe, tenemos el indice borrar
+        if (encontrado == true) {
+            canciones.remove(i);
+        }
+        return encontrado;
+    }
+    
+    
 }
