@@ -29,10 +29,9 @@ public class EliminarCancion extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            int id = Integer.parseInt(request.getParameter("id"));
             
-            List<Cancion> canciones = cancionService.borrarCancion(id);
             
+            List<Cancion> canciones = cancionService.borrarCancion(Integer.parseInt(request.getParameter("id")));
             
             
             request.getSession().setAttribute("canciones", canciones);

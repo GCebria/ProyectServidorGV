@@ -58,9 +58,9 @@ public class CancionService implements CancionServiceLocal {
     }
 
     @Override
-    public List borrarCancion(int idCancion) {
+    public List borrarCancion(int id) {
                 for (Cancion c: canciones){
-            if (c.getIdCancion()==idCancion){
+            if (c.getIdCancion()==id){
                 canciones.remove(c);
             }
         }

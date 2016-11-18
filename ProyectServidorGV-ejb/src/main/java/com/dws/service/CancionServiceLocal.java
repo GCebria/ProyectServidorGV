@@ -17,7 +17,7 @@ public interface CancionServiceLocal {
 
     List listCanciones();
 
-    List borrarCancion(int idCancion);
+    List borrarCancion(int id);
 
 
     

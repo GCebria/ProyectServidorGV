@@ -51,7 +51,7 @@
                 <td><%=ano%></td>
                 <td><%=precio%> €</td>
                 <td><a href="ModificarCancion?accion=editar&id=<%=id%>">Modificar</td>
-                <td><a href="EliminarCancion">Borrar</td>
+                <td><a href="EliminarCancion?id=<%=id%>">Borrar</td>
             </tr>
 
 
