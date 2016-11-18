@@ -1,1 +1,3 @@
+com\dws\servlets\ListarCanciones.class
 com\dws\servlets\ListarUsers.class
+com\dws\servlets\CrearCancion.class

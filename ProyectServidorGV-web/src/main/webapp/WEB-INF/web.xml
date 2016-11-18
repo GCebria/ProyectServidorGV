@@ -4,9 +4,25 @@
         <servlet-name>ListarUsers</servlet-name>
         <servlet-class>com.dws.servlets.ListarUsers</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarCanciones</servlet-name>
+        <servlet-class>com.dws.servlets.ListarCanciones</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CrearCancion</servlet-name>
+        <servlet-class>com.dws.servlets.CrearCancion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListarUsers</servlet-name>
         <url-pattern>/ListarUsers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarCanciones</servlet-name>
+        <url-pattern>/ListarCanciones</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrearCancion</servlet-name>
+        <url-pattern>/CrearCancion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
