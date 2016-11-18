@@ -16,5 +16,9 @@ import javax.ejb.Local;
 public interface CancionServiceLocal {
 
     List listCanciones();
+
+    List borrarCancion(int idCancion);
+
+
     
 }

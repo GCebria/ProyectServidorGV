@@ -56,6 +56,15 @@ public class CancionService implements CancionServiceLocal {
     public List listCanciones() {
         return canciones;
     }
-    
-  
+
+    @Override
+    public List borrarCancion(int idCancion) {
+                for (Cancion c: canciones){
+            if (c.getIdCancion()==idCancion){
+                canciones.remove(c);
+            }
+        }
+        return canciones;
+        
+    }  
 }

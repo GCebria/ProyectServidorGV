@@ -8,9 +8,9 @@ package com.dws.servlets;
 import com.dws.domain.Cancion;
 import com.dws.service.CancionServiceLocal;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,12 +30,17 @@ public class EliminarCancion extends HttpServlet {
 
         try {
             int id = Integer.parseInt(request.getParameter("id"));
-            List<Cancion> canciones = cancionService.listCanciones();
-            for (Cancion c: canciones){
-                if (c.getIdCancion())
-            }
+            
+            List<Cancion> canciones = cancionService.borrarCancion(id);
+            
+            
+            
             request.getSession().setAttribute("canciones", canciones);
-
+            
+            
+            RequestDispatcher rd = request.getRequestDispatcher("/listarCanciones.jsp");
+            rd.forward(request, response);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
