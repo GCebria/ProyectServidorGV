@@ -18,10 +18,9 @@ public interface CancionServiceLocal {
 
     ArrayList listCanciones();
 
-
-    ArrayList deleteCancion(int id);
-
     Boolean eliminaCancion(Cancion c);
+
+    Boolean anadeCancion(Cancion c);
 
 
 

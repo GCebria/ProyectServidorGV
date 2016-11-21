@@ -30,16 +30,6 @@ public class CrearCancion extends HttpServlet {
         try {
 //             <!--public Cancion(String idCancion, String nombre, String album, String artista, int duracion, int ano, Double precio) {-->
 
-            
-            ArrayList<Cancion> canciones = cancionService.listCanciones();
-            
-            int maxId = 0;
-            for (Cancion cancion : canciones) {
-                if (cancion.getIdCancion() >= maxId) {
-                    maxId = cancion.getIdCancion();
-                }
-            }
-            maxId++;
             String nombre = request.getParameter("nombre");
             String album = request.getParameter("album");
             String artista = request.getParameter("artista");
@@ -47,9 +37,8 @@ public class CrearCancion extends HttpServlet {
             int duracion =Integer.parseInt(request.getParameter("duracion"));
             Double precio =Double.parseDouble(request.getParameter("precio"));
             
-            Cancion c = new Cancion(maxId,nombre, album, artista, duracion, ano, precio );
-            canciones.add(c);
-            request.getSession().setAttribute("canciones", canciones);
+            Cancion c = new Cancion(0,nombre, album, artista, duracion, ano, precio );
+            this.cancionService.anadeCancion(c);
             
             RequestDispatcher rd = request.getRequestDispatcher("/listarCanciones.jsp");
             rd.forward(request, response);
