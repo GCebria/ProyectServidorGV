@@ -1,5 +1,6 @@
 com\dws\servlets\EliminaCancion.class
 com\dws\servlets\ModificarCancion.class
+com\dws\servlets\BibliotecaServlet.class
 com\dws\servlets\ListarCanciones.class
 com\dws\servlets\ListarUsers.class
 com\dws\servlets\CrearCancion.class

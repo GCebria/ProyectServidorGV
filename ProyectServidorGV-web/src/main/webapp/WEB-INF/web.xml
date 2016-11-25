@@ -24,6 +24,10 @@
         <servlet-name>EliminaCancion</servlet-name>
         <servlet-class>com.dws.servlets.EliminaCancion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BibliotecaServlet</servlet-name>
+        <servlet-class>com.dws.servlets.BibliotecaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListarUsers</servlet-name>
         <url-pattern>/ListarUsers</url-pattern>
@@ -43,6 +47,10 @@
     <servlet-mapping>
         <servlet-name>EliminaCancion</servlet-name>
         <url-pattern>/EliminaCancion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BibliotecaServlet</servlet-name>
+        <url-pattern>/BibliotecaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -6,6 +6,7 @@
 package com.dws.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,12 +24,14 @@ public class User implements Serializable {
     private String nombre;
     private String email;
     private String password;
+    private ArrayList<Cancion> Biblioteca;
 
-    public User(String idUser, String nombre, String email, String password) {
+    public User(String idUser, String nombre, String email, String password, ArrayList<Cancion> Biblioteca) {
         this.idUser = idUser;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
+        this.Biblioteca = Biblioteca;
     }
 
     public User() {
@@ -68,6 +71,14 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public ArrayList<Cancion> getBiblioteca() {
+        return Biblioteca;
+    }
+
+    public void setBiblioteca(ArrayList<Cancion> Biblioteca) {
+        this.Biblioteca = Biblioteca;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -92,8 +103,10 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" + "idUser=" + idUser + ", nombre=" + nombre + ", email=" + email + ", password=" + password + '}';
+        return "User{" + "idUser=" + idUser + ", nombre=" + nombre + ", email=" + email + ", password=" + password + ", Biblioteca=" + Biblioteca + '}';
     }
+
+    
     
     
     
