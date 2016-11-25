@@ -5,6 +5,8 @@
  */
 package com.dws.servlets;
 
+import com.dws.service.CancionServiceLocal;
+import com.dws.service.UserServiceLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -19,12 +21,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gerard
  */
-public class ListarUsers extends HttpServlet {
+public class ListarUsersServlet extends HttpServlet {
 
     @EJB
-    private com.dws.service.UserServiceLocal userService;
+    private UserServiceLocal userService;
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try{

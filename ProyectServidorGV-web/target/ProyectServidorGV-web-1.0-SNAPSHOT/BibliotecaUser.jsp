@@ -19,17 +19,7 @@
                 ArrayList<Cancion> canciones = (ArrayList) session.getAttribute("bibliotecaUsuario");
                 User usuario = (User) session.getAttribute("usuario");
                 String nombreUser = usuario.getNombre();
-                for (Cancion c : canciones) {
-
-                    int id = c.getIdCancion();
-                    String nombre = c.getNombre();
-                    String album = c.getAlbum();
-                    String artista = c.getArtista();
-                    int duracion = c.getDuracion();
-                    int ano = c.getAno();
-                    Double precio = c.getPrecio();
-
-            %> 
+             %> 
         
         <h1>Listado de Canciones de <%=nombreUser%></h1><br>
         
@@ -47,7 +37,17 @@
                 <th></th>
                 <th></th>
             </tr>
-            
+            <%  for (Cancion c : canciones) {
+
+                    int id = c.getIdCancion();
+                    String nombre = c.getNombre();
+                    String album = c.getAlbum();
+                    String artista = c.getArtista();
+                    int duracion = c.getDuracion();
+                    int ano = c.getAno();
+                    Double precio = c.getPrecio();
+
+            %> 
             <tr>
                 <td><%=id%></td>
                 <td><%=nombre%></td>

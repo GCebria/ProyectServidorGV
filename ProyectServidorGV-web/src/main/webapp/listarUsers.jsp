@@ -26,6 +26,7 @@
                 <th>Contraseña</th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
             <%
                 List<User> listaUsuarios = (List) session.getAttribute("users");

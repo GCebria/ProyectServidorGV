@@ -23,7 +23,7 @@ public class UserService implements UserServiceLocal {
 
     static {
         User u1 = new User("1", "user1", "user1@gmail.com", "pass", listaCanciones);
-        User u2 = new User("2", "user2", "user2@gmail.com", "pass", null);
+        User u2 = new User("2", "user2", "user2@gmail.com", "pass", listaCanciones);
         users.add(u1);
         users.add(u2);
         
