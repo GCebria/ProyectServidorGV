@@ -5,6 +5,7 @@
  */
 package com.dws.servlets;
 
+import com.dws.domain.Cancion;
 import com.dws.domain.User;
 import com.dws.service.CancionServiceLocal;
 import com.dws.service.UserServiceLocal;
@@ -28,18 +29,17 @@ public class BibliotecaServlet extends HttpServlet {
 
     @EJB
     private UserServiceLocal userService;
+    
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         try {
             String id = (String) request.getParameter("id");
-            ArrayList<User> listaUsuarios = userService.listUsers();
             User usuario = userService.buscaUser(id);
-            request.setAttribute("bibliotecaUsuario", usuario.getBiblioteca());
-            request.setAttribute("usuario", usuario);
+//            ArrayList<Cancion> bibliotecaUser = usuario.getBiblioteca();
+//            request.setAttribute("bibliotecaUsuario", bibliotecaUser);
+            request.setAttribute("nombreUsuario", usuario.getNombre());
             RequestDispatcher rd = request.getRequestDispatcher("/BibliotecaUser.jsp");
-
             rd.forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();

@@ -16,12 +16,12 @@
     </head>
     <body>        
          <%
-                ArrayList<Cancion> canciones = (ArrayList) session.getAttribute("bibliotecaUsuario");
-                User usuario = (User) session.getAttribute("usuario");
-                String nombreUser = usuario.getNombre();
+//                ArrayList<Cancion> canciones = (ArrayList) session.getAttribute("bibliotecaUsuario");
+//                User usuario = (User) session.getAttribute("usuario");
+                String nombreUsuario = (String) request.getAttribute("nombreUsuario");
              %> 
         
-        <h1>Listado de Canciones de <%=nombreUser%></h1><br>
+        <h1>Listado de Canciones de <%=nombreUsuario%></h1><br>
         
         
 
@@ -35,33 +35,31 @@
                 <th>Año</th>
                 <th>Precio</th>
                 <th></th>
-                <th></th>
             </tr>
-            <%  for (Cancion c : canciones) {
+            <% //  for (Cancion c : canciones) {
 
-                    int id = c.getIdCancion();
-                    String nombre = c.getNombre();
-                    String album = c.getAlbum();
-                    String artista = c.getArtista();
-                    int duracion = c.getDuracion();
-                    int ano = c.getAno();
-                    Double precio = c.getPrecio();
+//                    int id = c.getIdCancion();
+//                    String nombre = c.getNombre();
+//                    String album = c.getAlbum();
+//                    String artista = c.getArtista();
+//                    int duracion = c.getDuracion();
+//                    int ano = c.getAno();
+//                    Double precio = c.getPrecio();
 
             %> 
-            <tr>
-                <td><%=id%></td>
-                <td><%=nombre%></td>
-                <td><%=album%></td>
-                <td><%=artista%></td>
-                <td><%=duracion%> s.</td>
-                <td><%=ano%></td>
-                <td><%=precio%> €</td>
-                <td><a href="ModificarCancion?accion=editar&id=<%=id%>">Modificar</td>
-                <td><a href="EliminaCancion?id=<%=id%>">Borrar</td>
-            </tr>
+            <!--<tr>-->
+                <!--<td><%= //id%></td>-->
+                <!--<td><%= //nombre%></td>-->
+                <!--<td><%= //album%></td>-->
+                <!--<td><%= //artista%></td>-->
+                <!--<td><%= //duracion%> s.</td>-->
+                <!--<td><%= //ano%></td>-->
+                <!--<td><%= //precio%> €</td>-->
+                <!--<td><a href="EliminaCancion?id=<%= //id%>">Borrar</td>-->
+            <!--</tr>-->
 
 
-            <%}%>
+            <% //}%>
 
         </table>
             <br>

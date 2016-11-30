@@ -45,7 +45,7 @@
                 <td><%=contrasena%></td>
                 <td><a href="ModificarUser?accion=editar&id=<%=id%>">Modificar</td>
                 <td><a href="EliminarUser?id=<%=id%>">Borrar</td>
-                <td><a href="BibliotecaUser?id=<%=id%>">Ver Biblioteca</td>
+                <td><a href="BibliotecaServlet?id=<%=id%>">Ver Biblioteca</td>
             </tr>
 
 

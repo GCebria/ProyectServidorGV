@@ -5,6 +5,8 @@
  */
 package com.dws.servlets;
 
+import com.dws.domain.Cancion;
+import com.dws.domain.User;
 import com.dws.service.CancionServiceLocal;
 import com.dws.service.UserServiceLocal;
 import java.io.IOException;
@@ -21,20 +23,23 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gerard
  */
-public class ListarUsersServlet extends HttpServlet {
+public class ListarUsers extends HttpServlet {
+
+    @EJB
+    private CancionServiceLocal cancionService;
 
     @EJB
     private UserServiceLocal userService;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try{
-            ArrayList lista = userService.listUsers();
+        try {
+            ArrayList<User> lista = userService.listUsers();
             request.getSession().setAttribute("users", lista);
             RequestDispatcher rd = request.getRequestDispatcher("/listarUsers.jsp");
-            rd.forward(request,response);
-            
-        }catch(Exception e){
+            rd.forward(request, response);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -77,5 +82,14 @@ public class ListarUsersServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    @Override
+    public void init() throws ServletException {
+        super.init(); //To change body of generated methods, choose Tools | Templates.
+        
+
+     
+        
+    }
 
 }

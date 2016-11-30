@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Ir a gestión de users:</h1>
-        <a href="ListarUsersServlet">Listar Usuarios</a>
+        <a href="ListarUsers">Listar Usuarios</a>
         <h1>Ir a gestión de canciones</h1>
         <a href="ListarCanciones">Listar Canciones</a>
     </body>

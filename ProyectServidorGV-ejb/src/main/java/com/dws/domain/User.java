@@ -24,14 +24,14 @@ public class User implements Serializable {
     private String nombre;
     private String email;
     private String password;
-    private ArrayList<Cancion> Biblioteca;
+    private ArrayList<Cancion> biblioteca;
 
-    public User(String idUser, String nombre, String email, String password, ArrayList<Cancion> Biblioteca) {
+    public User(String idUser, String nombre, String email, String password, ArrayList<Cancion> biblioteca) {
         this.idUser = idUser;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
-        this.Biblioteca = Biblioteca;
+        this.biblioteca = biblioteca;
     }
 
     public User() {
@@ -72,11 +72,11 @@ public class User implements Serializable {
     }
 
     public ArrayList<Cancion> getBiblioteca() {
-        return Biblioteca;
+        return biblioteca;
     }
 
-    public void setBiblioteca(ArrayList<Cancion> Biblioteca) {
-        this.Biblioteca = Biblioteca;
+    public void setBiblioteca(ArrayList<Cancion> biblioteca) {
+        this.biblioteca = biblioteca;
     }
     
     @Override
@@ -103,7 +103,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" + "idUser=" + idUser + ", nombre=" + nombre + ", email=" + email + ", password=" + password + ", Biblioteca=" + Biblioteca + '}';
+        return "User{" + "idUser=" + idUser + ", nombre=" + nombre + ", email=" + email + ", password=" + password + ", Biblioteca=" + biblioteca + '}';
     }
 
     
