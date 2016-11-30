@@ -5,6 +5,7 @@
  */
 package com.dws.service;
 
+import com.dws.domain.User;
 import java.util.ArrayList;
 import javax.ejb.Local;
 
@@ -16,5 +17,6 @@ import javax.ejb.Local;
 public interface UserServiceLocal {
 
     ArrayList listUsers();
-    
+
+    User comprobacionUsuario(String usuario, String password);    
 }

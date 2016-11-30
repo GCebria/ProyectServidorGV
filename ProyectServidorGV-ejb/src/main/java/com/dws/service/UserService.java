@@ -7,7 +7,6 @@ package com.dws.service;
 
 import com.dws.domain.User;
 import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.Stateless;
 
 /**
@@ -16,21 +15,40 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class UserService implements UserServiceLocal {
- private static ArrayList<User> users = new ArrayList();
+
+    private static ArrayList<User> users = new ArrayList();
 
     static {
-        User u1 = new User("1", "user1", "user1@gmail.com", "pass");
-        User u2 = new User("2", "user2", "user2@gmail.com", "pass");
+        User admin = new User("1", "admin", "admin@gmail.com", "admin");
+        User u1 = new User("2", "user1", "user1@gmail.com", "pass");
+        User u2 = new User("3", "user2", "user2@gmail.com", "pass");
+        users.add(admin);
         users.add(u1);
         users.add(u2);
     }
+
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-
     @Override
     public ArrayList listUsers() {
         return users;
     }
-    
-    
+
+    @Override
+    public User comprobacionUsuario(String usuario, String password) {
+        User usuarioConectado = null;
+
+        for (User u : users) {
+            if ("admin".equalsIgnoreCase(usuario) && u.getPassword().equalsIgnoreCase(usuario)) {
+                usuarioConectado = u;
+            if (u.getNombre().equalsIgnoreCase(usuario) && u.getPassword().equalsIgnoreCase(usuario)) {
+                usuarioConectado = u;
+            } else {
+                usuarioConectado = null;
+            }
+        }
+        
+        return usuarioConectado;
+    }
+
 }
