@@ -62,19 +62,19 @@ public class UserService implements UserServiceLocal {
 
     @Override
     public User buscaUser(String id) {
-        ArrayList<User> listaUsuarios = this.listUsers();
-        User user = null;
-        for (User u: listaUsuarios){
+//        ArrayList<User> listaUsuarios = this.listUsers();
+        User usuario = null;
+        for (User u: users){
             if(id.equals(u.getIdUser())){
-                user.setIdUser(id);
-                user.setNombre(u.getNombre());
-                user.setEmail(u.getEmail());
-                user.setPassword(u.getPassword());
-                user.setBiblioteca(u.getBiblioteca());
+                usuario.setIdUser(id);
+                usuario.setNombre(u.getNombre());
+                usuario.setEmail(u.getEmail());
+                usuario.setPassword(u.getPassword());
+                usuario.setBiblioteca(u.getBiblioteca());
             }
         }
                
-        return user;
+        return usuario;
     }
     
     

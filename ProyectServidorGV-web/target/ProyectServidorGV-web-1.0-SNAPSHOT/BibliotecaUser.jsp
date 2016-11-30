@@ -16,18 +16,16 @@
     </head>
     <body>        
          <%
-//                ArrayList<Cancion> canciones = (ArrayList) session.getAttribute("bibliotecaUsuario");
-//                User usuario = (User) session.getAttribute("usuario");
-                String nombreUsuario = (String) request.getAttribute("nombreUsuario");
+//             String nombre = (String) request.getParameter("user");
+//                User usuario = (User) request.getAttribute("user");
+//                ArrayList<Cancion> canciones = usuario.getBiblioteca();
              %> 
         
-        <h1>Listado de Canciones de <%=nombreUsuario%></h1><br>
-        
-        
+             <h1>Listado de Canciones de</h1><br>
 
         <table border="1">
             <tr>
-                <th>ID Cancion</th>
+               
                 <th>Nombre</th>
                 <th>Album</th>
                 <th>Artista</th>
@@ -36,7 +34,7 @@
                 <th>Precio</th>
                 <th></th>
             </tr>
-            <% //  for (Cancion c : canciones) {
+            <% // for (Cancion c : canciones) {
 
 //                    int id = c.getIdCancion();
 //                    String nombre = c.getNombre();
@@ -47,19 +45,22 @@
 //                    Double precio = c.getPrecio();
 
             %> 
-            <!--<tr>-->
-                <!--<td><%= //id%></td>-->
-                <!--<td><%= //nombre%></td>-->
-                <!--<td><%= //album%></td>-->
-                <!--<td><%= //artista%></td>-->
-                <!--<td><%= //duracion%> s.</td>-->
-                <!--<td><%= //ano%></td>-->
-                <!--<td><%= //precio%> €</td>-->
-                <!--<td><a href="EliminaCancion?id=<%= //id%>">Borrar</td>-->
-            <!--</tr>-->
+            
+            <tr>
+               <th>Nombre</th>
+                <th>Album</th>
+                <th>Artista</th>
+                <th>Duración</th>
+                <th>Año</th>
+                <th>Precio</th>
+                <th></th>
+            </tr>
+            
+            
+            <%//}%>
+            
+                 
 
-
-            <% //}%>
 
         </table>
             <br>

@@ -35,12 +35,13 @@ public class BibliotecaServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             String id = (String) request.getParameter("id");
-            User usuario = userService.buscaUser(id);
-//            ArrayList<Cancion> bibliotecaUser = usuario.getBiblioteca();
-//            request.setAttribute("bibliotecaUsuario", bibliotecaUser);
-            request.setAttribute("nombreUsuario", usuario.getNombre());
+//            User usuario = userService.buscaUser(id);
+      
+            request.setAttribute("user", id);
+          
             RequestDispatcher rd = request.getRequestDispatcher("/BibliotecaUser.jsp");
             rd.forward(request, response);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
